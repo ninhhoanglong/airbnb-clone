@@ -36,7 +36,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
   const loginModal = useLoginModal();
   const router = useRouter();
 
-  const disableDates = useMemo(() => {
+  const disabledDates = useMemo(() => {
     let dates: Date[] = [];
 
     reservations.forEach((reservation: any) => {
@@ -74,8 +74,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
         router.refresh();
       })
       .catch(() => {
-        console.log("call api");
-
         toast.error("Something went wrong.");
       })
       .finally(() => {
@@ -130,7 +128,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
                 dateRange={dateRange}
                 onSubmit={onCreateReservation}
                 disabled={isLoading}
-                disabledDates={disableDates}
+                disabledDates={disabledDates}
               />
             </div>
           </div>

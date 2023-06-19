@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
   const { listingId, startDate, endDate, totalPrice } = body;
 
-  if (!listingId || !startDate || !endDate || totalPrice) {
+  if (!listingId || !startDate || !endDate || !totalPrice) {
     return NextResponse.error();
   }
 
